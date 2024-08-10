@@ -22,7 +22,7 @@ Arrow Operator(**->**) should be used instead of dot operator in `zombie->setNam
 ```
 with `delete` the pointer should be deallocated. 
 
-Must know where to allocate memory, either on Heap or on Stack.
+Must know where to allocate memory, either on Heap or on Stack. But I don't know yet, further practical experience is needed.
 
 **Stack memory allocation** is fast, simple, and automatically managed, but limited in size and scope. It is ideal for temporary, small, and short-lived data.
 
