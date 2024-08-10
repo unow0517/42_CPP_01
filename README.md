@@ -28,7 +28,7 @@ Must know where to allocate memory, either on Heap or on Stack. But I don't know
 
 **Heap memory allocation** offers more flexibility and larger memory space but comes with the overhead of manual management, potential performance penalties, and a higher risk of memory-related errors. It's suitable for dynamically sized or long-lived objects.
 
-### operator new 
+### operator new && static_cast
 ```C++
 Zombie*	zombieHorde( int N, std::string name )
 {
@@ -40,7 +40,7 @@ Zombie*	zombieHorde( int N, std::string name )
 }
 ```
 
-the `operator new` is a direct call to the memory allocation function that is responsible for allocating memory. **It does not initialize the objects; it simply allocates the raw memory**.
+the `operator new` is a direct call to the memory allocation function that is responsible for allocating memory. **It does not initialize the objects; it simply allocates the raw memory**. It is often used when you want to separate memory allocation from object construction, which can be useful for optimizing memory management in certain situations.
 
 `Zombie *objects = static_cast<Zombie*>(memory);` : You are telling the compiler to treat this block of memory as if it is an array of MyObject. This means that objects now points to the start of this memory block, and the memory is treated as a contiguous array of MyObject.
 
@@ -48,3 +48,17 @@ Afterwards, you can access memory with *objects[0], objects[1]*... But you canno
 
 Type Safety: **static_cast** is the safest and most appropriate cast to use in this scenario. It performs a checked conversion at compile time and ensures that the types are compatible.
 Alternative Casts: Other C++ casts, like reinterpret_cast, would work as well but are less safe because they allow potentially dangerous conversions without checks. static_cast ensures that the conversion between void* and MyObject* is valid and appropriate.
+
+**But in this case the destructor for each object should be manually called as well as memory should be deallocated.**
+
+### new Objects[N]
+```C++
+Zombie*	zombieHorde( int N, std::string name )
+{
+	Zombie *zombies = new Zombies[10];
+	return zombies;
+}
+```
+ I didn't use this but this is faster and safer for our purpose. And destruction is also more simple.
+
+`new[], delete[]` are for allocating/deallocating multiple Objects, compared to `new, delete` for single Object.
