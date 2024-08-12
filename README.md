@@ -69,6 +69,6 @@ int main()
 	delete[] zombies;
 }
 ```
- I didn't use this but this is faster and safer for our purpose. And destruction is also more simple.
+We have to use this to allocate multiple objects in a single allocation. And destruction is also more simple.
 
 `new[], delete[]` are for allocating/deallocating multiple Objects, compared to `new, delete` for single Object.
