@@ -55,8 +55,18 @@ Alternative Casts: Other C++ casts, like reinterpret_cast, would work as well bu
 ```C++
 Zombie*	zombieHorde( int N, std::string name )
 {
-	Zombie *zombies = new Zombies[10];
+	Zombie *zombies = new Zombies[N];
+	for (int i = 0; i < N; i++)
+		objects[i].setName(name);
 	return zombies;
+}
+```
+
+```C++
+int main()
+{
+	Zombie *zombies = zombieHorde(N, "oneOfZombies");
+	delete[] zombies;
 }
 ```
  I didn't use this but this is faster and safer for our purpose. And destruction is also more simple.
