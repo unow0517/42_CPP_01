@@ -72,3 +72,19 @@ int main()
 We have to use this to allocate multiple objects in a single allocation. And destruction is also more simple.
 
 `new[], delete[]` are for allocating/deallocating multiple Objects, compared to `new, delete` for single Object.
+
+### Pointer VS Reference
+
+```c++
+
+int main() 
+{
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str; //pointer
+	std::string &stringREF = str; //reference
+}
+
+```
+**Pointer** : holds address of the string, can be null-initialized, reassigned to another memory addres, `*` to dereference and `->` to access members. For array manipulation, dynamic memory management.
+
+**Reference** : **alias to existing object**. cannot be null-initialized, initialized to refer an existing variable or object, cannot be reassigned, dot operator (`.`) can be used without dereferencing.
