@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 16:20:17 by yowoo             #+#    #+#             */
-/*   Updated: 2024/08/12 19:02:33 by yowoo            ###   ########.fr       */
+/*   Created: 2024/08/12 21:17:10 by yowoo             #+#    #+#             */
+/*   Updated: 2024/08/12 22:05:14 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Weapon.hpp"
 
-#include <string>
-#include <iostream> //for cout
+Weapon::Weapon(const std::string input): type(input){};
 
-class Zombie{
-private:
-	std::string name;
-public:
-	Zombie (void);
-	~Zombie (void);
-	
-	void announce( void );
-	void setName( std::string input );
+Weapon::~Weapon(){};
+
+std::string &Weapon::getType()
+{
+	return (type);
 };
-Zombie*	newZombie( std::string name );
-void	randomChump ( std::string name );
 
-#endif
+void Weapon::setType(const std::string input)
+{
+	type = input;
+};
+
