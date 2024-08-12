@@ -88,3 +88,5 @@ int main()
 **Pointer** : holds address of the string, can be null-initialized, reassigned to another memory addres, `*` to dereference and `->` to access members. For array manipulation, dynamic memory management.
 
 **Reference** : **alias to existing object**. cannot be null-initialized, initialized to refer an existing variable or object, cannot be reassigned, dot operator (`.`) can be used without dereferencing.
+
+***In ex02, in my opinion, the sentence 'The value pointed by stringREF' is wrong, 'The value refered by stringREF' is right, since reference does not point to, rather does refer.*** 
