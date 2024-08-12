@@ -89,4 +89,15 @@ int main()
 
 **Reference** : **alias to existing object**. cannot be null-initialized, initialized to refer an existing variable or object, cannot be reassigned, dot operator (`.`) can be used without dereferencing.
 
-***In ex02, in my opinion, the sentence 'The value pointed by stringREF' is wrong, 'The value refered by stringREF' is right, since reference does not point to, rather does refer.*** 
+***In ex02, in my opinion, the sentence 'The value pointed by stringREF' is wrong, 'The value refered by stringREF' is right, since reference does not point to, rather does refer.***
+
+```c++
+void setWeapon(Weapon &wp);
+```
+The function takes a reference to a Weapon object. The Weapon Object is not copied, a reference to the original object is used. The function can modify the original object. More efficient, especially with large objects.
+
+```c++
+void setWeapon(Weapon wp);
+```
+This function takes a Weapon as a value. The Weapon object is copied when passed to the function. Use when you don't want to affect original Object. 
+
