@@ -101,3 +101,32 @@ void setWeapon(Weapon wp);
 ```
 This function takes a Weapon as a value. The Weapon object is copied when passed to the function. Use when you don't want to affect original Object. 
 
+### New Syntax
+
+`>>` : **Extraction operator**, sed with input streams like std::cin, std::ifstream, etc. It is used to extract data from an input stream and store it in a variable. By default, this operator skips whitespace characters (such as spaces, tabs, and newlines).
+That's why we use 
+
+`infile >> std::noskipws >> c;`
+
+### Map 
+`std::map` is a standard library container that implements an associative container, which is a data structure that **stores elements as key-value pairs**.
+
+### `this`
+`this` is a special pointer that refers to the current instance of the class.
+
+```c++
+class Example {
+public:
+    void show() { std::cout << "show() called" << std::endl; }
+    void callMemberFunction(void (Example::*func)()) {
+        (this->*func)();  // Calls the member function using this pointer
+    }
+};
+
+int main() {
+    Example obj;
+    obj.callMemberFunction(&Example::show);  // Calls show() method
+    return 0;
+}
+```
+
