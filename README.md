@@ -108,5 +108,8 @@ That's why we use
 
 `infile >> std::noskipws >> c;`
 
+### Map 
+`std::map` is a standard library container that implements an associative container, which is a data structure that **stores elements as key-value pairs**.
+
 
 
