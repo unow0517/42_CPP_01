@@ -101,3 +101,12 @@ void setWeapon(Weapon wp);
 ```
 This function takes a Weapon as a value. The Weapon object is copied when passed to the function. Use when you don't want to affect original Object. 
 
+### New Syntax
+
+`>>` : **Extraction operator**, sed with input streams like std::cin, std::ifstream, etc. It is used to extract data from an input stream and store it in a variable. By default, this operator skips whitespace characters (such as spaces, tabs, and newlines).
+That's why we use 
+
+`infile >> std::noskipws >> c;`
+
+
+
