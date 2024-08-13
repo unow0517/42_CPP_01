@@ -130,3 +130,24 @@ int main() {
 }
 ```
 
+### Switch
+
+```c++
+switch (harl_translate(argv))
+{
+	case 0:
+		h.complain("DEBUG");
+	case 1:
+		h.complain("INFO");
+	case 2:
+		h.complain("WARNING");
+	case 3:
+		h.complain("ERROR");
+		break ;
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+}
+```
+similar to if/else statement, but without `break` the case falls through the case below.
+
+
