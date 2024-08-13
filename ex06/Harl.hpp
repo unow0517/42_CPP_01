@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yowoo <yowoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 17:48:49 by yowoo             #+#    #+#             */
-/*   Updated: 2024/08/13 15:44:16 by yowoo            ###   ########.fr       */
+/*   Created: 2024/08/12 22:36:00 by yowoo             #+#    #+#             */
+/*   Updated: 2024/08/13 12:32:53 by yowoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main() 
+#include <iostream>
+#include <map>
+#include <string>
+
+class Harl
 {
-	Harl h;
+	private:
+		void debug (void);
+		void info (void);
+		void warning (void);
+		void error (void);
+	public:
+		Harl();
+		~Harl();
+		void    complain( std::string level );
+};
 
-	h.complain("DEBUG");
-	h.complain("INFO");
-	h.complain("WARNING");
-	h.complain("ERROR");
-	h.complain("BAAAM");
-	
-	return (0);
-}
+#endif
