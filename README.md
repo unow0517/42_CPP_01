@@ -111,5 +111,22 @@ That's why we use
 ### Map 
 `std::map` is a standard library container that implements an associative container, which is a data structure that **stores elements as key-value pairs**.
 
+### `this`
+`this` is a special pointer that refers to the current instance of the class.
 
+```c++
+class Example {
+public:
+    void show() { std::cout << "show() called" << std::endl; }
+    void callMemberFunction(void (Example::*func)()) {
+        (this->*func)();  // Calls the member function using this pointer
+    }
+};
+
+int main() {
+    Example obj;
+    obj.callMemberFunction(&Example::show);  // Calls show() method
+    return 0;
+}
+```
 
